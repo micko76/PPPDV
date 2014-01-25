@@ -1,0 +1,9 @@
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\bin\Debug\Prijava.exe.config
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\bin\Debug\Prijava.exe
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\bin\Debug\Prijava.pdb
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.csprojResolveAssemblyReference.cache
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.Prijava1.resources
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.Properties.Resources.resources
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.csproj.GenerateResource.Cache
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.exe
+c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.pdb
