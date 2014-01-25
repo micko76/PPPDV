@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Verzija 1.0.0 - prva verzija prijave
+Verzija 1.0.1 - nova pozicija na prijavi, 1.2a - Oznaka K, ako je prijava kojom se prijavljuje konačna isplata zarada
+Verzija 1.0.2 - promenjena pozicija na prijavi 2.3, umesto RadnoVremeRaspored stavljen MesecniFondSati
+Verzija 1.1.0 - ubačen Ukupno, sa 8 pojedinačnih elemenata, PIOBen stavljen da je obavezan, uz mogućnost unosa 0. 
+Verzija 1.2.0 - usklađivanje sa poslednjim predlogom pravilnika (POB ne unosi Ukupno, iznosi su celi brojevi); prošireno polje za identifikator subjekta (zbog pasoša); svi ponavljajući elementi oklopljeni grupišućim tagom (PodaciOPrihodima i MFP) zbog lakšeg generisanja XML-a iz razvojnih alata 
+Verzija 1.2.1 - element Oznaka sa tagTip preveden na Enumeraciju, radi bolje kontrole ispravnosti XML-a 
+Verzija 1.3.0 - pozicija 2.3 premeštena na 3.8a, svi iznosi vraćeni na decimalne brojeve.
+Verzija 1.3.1 - pozicija 2.3 vraćena na prijavu, sa novim značenjem
+Verzija 1.3.2 - uvedena ograničenja za dužine stringova, katalog opština i ŠVP
+Verzija 1.3.3 - pozicija 2.3 preimenovana u BrojZaposlenih i proširen da može i 0, 3.8a proširen opseg da može i -1
+Verzija 1.3.4 - OpstinaTip - ograničeno da mogu samo cifre 
+Verzija 1.3.5 - Polje KlijentskaOznakaDeklaracije postalo opciono, dodatna ograničenja (PIBJMBG 9 ili 13 cifara, MBR 8 cifara..), pojedina int polja dodatno ograničena u skladu sa poslovnim pravilima
+Verzija 1.4.0 - Polje VrstaIdentifikatoraIsplatioca izbačeno. Polje OznakaPrebivalista (pozicija 3.5) postalo obavezno.
+Verzija 1.4.1 - Polja Broj dana i Broj sati (pozicije 3.7 i 3.8) postaju >=0
+-->
+<xs:schema 
+   elementFormDefault="qualified"
+   targetNamespace="http://pid.purs.gov.rs"
+   version="1.4.1"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:tns="http://pid.purs.gov.rs">
+   <xs:complexType name="KamataTip">
+      <xs:sequence>
+         <!--
+         PP 5.1
+         Deklarisana kamata na iznos poreza.
+         -->
+         <xs:element name="Porez" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 5.2
+         Deklarisana kamata na doprinos za penzijsko i invalidsko osiguranje.
+         -->
+         <xs:element name="PIO" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 5.3
+         Deklarisana kamata na doprinos za zdravstvenu zaštitu.
+         -->
+         <xs:element name="ZDR" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 5.4
+         Deklarisana kamata na doprinos za slučaj nezaposlenosti.
+         -->
+         <xs:element name="NEZ" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 5.5
+         Deklarisana kamata na doprinos za beneficirani PIO staž.
+         -->
+         <xs:element name="PIOBen" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <xs:complexType name="MultifunkcionalnoPolje">
+      <xs:sequence maxOccurs="1" minOccurs="1">
+         <!--
+         Oznaka MFP. Uzima vrednosti
+         MFP.1
+         MFP.2
+         MFP.3
+         MFP.4
+         MFP.5
+         MFP.6
+         MFP.7
+         MFP.8
+         MFP.9
+         MFP.10
+         MFP.11
+         MFP.12
+         -->
+         <xs:element name="Oznaka" maxOccurs="1" minOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string" id="MFPOznaka">
+                 <xs:enumeration value="MFP.1"/>
+                 <xs:enumeration value="MFP.2"/>
+                 <xs:enumeration value="MFP.3"/>
+                 <xs:enumeration value="MFP.4"/>
+                 <xs:enumeration value="MFP.5"/>
+                 <xs:enumeration value="MFP.6"/>
+                 <xs:enumeration value="MFP.7"/>
+                 <xs:enumeration value="MFP.8"/>
+                 <xs:enumeration value="MFP.9"/>
+                 <xs:enumeration value="MFP.10"/>
+                 <xs:enumeration value="MFP.11"/>
+                 <xs:enumeration value="MFP.12"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 3.17
+         Deklarisana vrednost MFP.
+         -->
+         <xs:element name="Vrednost" maxOccurs="1" minOccurs="1" type="tns:String512"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <!--
+   Decimalni broj sa dve decimale, veći ili jednak nuli.
+   -->
+   <xs:simpleType name="DecimalPozitivNulaTip">
+     <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <!--
+   Oznaka šifre vrste prihoda. Sastavljena od 9 cifara.
+   -->
+   <xs:simpleType name="SVPTip">
+     <xs:restriction base="xs:int">
+        <xs:minExclusive value="100000000"/>
+        <xs:maxExclusive value="999999999"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PodaciOPrihodimaTip">
+      <xs:sequence>
+         <!--
+         PP 3.1
+         Redni broj stavke. 
+         -->
+         <xs:element name="RedniBroj" maxOccurs="1" minOccurs="1" type="xs:positiveInteger"/>
+         <!--
+         PP 3.2
+         Vrsta identifikatora primaoca
+         
+         1	JMBG ili EB
+         2	Izbeglička Legitimacija
+         3	Pasoš
+         4	Eksterni Identifikator
+         9	Ostalo
+         -->
+         <xs:element name="VrstaIdentifikatoraPrimaoca" maxOccurs="1" minOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                 <xs:enumeration value="1"/>
+                 <xs:enumeration value="2"/>
+                 <xs:enumeration value="3"/>
+                 <xs:enumeration value="4"/>
+                 <xs:enumeration value="9"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 3.3
+         Identifikator primaoca prihoda.
+         -->
+         <xs:element name="IdentifikatorPrimaoca" maxOccurs="1" minOccurs="1" type="tns:IdentifikatorSubjektaTip"/>
+         <!--
+         PP 3.4
+         Prezime primaoca prihoda.
+         -->
+         <xs:element name="Prezime" maxOccurs="1" minOccurs="1" type="tns:String255"/>
+         <!--
+         PP 3.4a
+         Ime primaoca prihoda.
+         -->
+         <xs:element name="Ime" maxOccurs="1" minOccurs="1" type="tns:String255"/>
+         <!--
+         PP 3.5
+         Oznaka opštine prebivališta primaoca iz kataloga svih opština u Republici Srbiji. Obavezno polje ukoliko je u polje 3.2 uneta vrednost različita od 1.
+         -->
+         <xs:element name="OznakaPrebivalista" maxOccurs="1" minOccurs="1" type="tns:OpstinaTip"/>
+         <!--
+         PP 3.6
+         Šifra vrste prihoda - u celosti - kako je deklarisano.
+         -->
+         <xs:element name="SVP" maxOccurs="1" minOccurs="1" type="tns:SVPTip"/>
+         <!--
+         PP 3.7
+         Broj kalendarskih dana provedenih na radu / bolovanju.
+         -->
+         <xs:element name="BrojKalendarskihDana" maxOccurs="1" minOccurs="0" type="xs:nonNegativeInteger"/>
+         <!--
+         PP 3.8
+         Broj efektivnih sati radnog angažmana primaoca prihoda u obračunskom periodu.
+         -->
+         <xs:element name="BrojEfektivnihSati" maxOccurs="1" minOccurs="0" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.8a
+         Samo za isplatu zarada. Ukupan mesečni fond sati za obračunski period u 1.2. za konkretnog primaoca prihoda. Obavezan ako je oznaka uz 1.2 K – za konačnu isplatu zarada ili ako je  3.8 Broj efektivnih sati > 0.
+         Oznaka -1 za isplatu bonus ili regres (101) kada je primalac ceo obračunski period na bolovanju.
+         -->
+         <xs:element name="MesecniFondSati" maxOccurs="1" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                 <xs:minInclusive value="-1"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 3.9
+         Bruto prihod ili naknada.
+         Prihod koji je planiran za isplatu pre odbitaka.
+         0 za najnižu osnovicu doprinosa, samo doprinosi;
+         0 zbog izmena („brisanje“ primaoca iz prijave).
+         
+         -->
+         <xs:element name="Bruto" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.10
+         Deklarisana osnovica za porez.
+         -->
+         <xs:element name="OsnovicaPorez" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.11
+         Deklarisani iznos poreza. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="Porez" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.12
+         Deklarisana osnovica za doprinose. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="OsnovicaDoprinosi" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.13
+         Deklarisani doprinos za penzijsko i invalidsko osiguranje. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="PIO" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.14
+         Deklarisani doprinos za zdravstvenu zaštitu. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="ZDR" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.15
+         Deklarisani doprinos za slučaj nezaposlenosti. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="NEZ" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 3.16
+         Deklarisani doprinos za beneficirani PIO staž. Mora se deklarisati, makar 0.
+         -->
+         <xs:element name="PIOBen" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <xs:element name="DeklarisaniMFP" maxOccurs="1" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                  <!--
+                  PP 3.17
+                  -->
+                  <xs:element name="MFP" type="tns:MultifunkcionalnoPolje"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>   
+   </xs:complexType>
+   <xs:simpleType name="eMailAdresaTip">
+     <xs:restriction base="xs:string">
+        <xs:pattern value="\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+        <xs:minLength value="3"/>
+        <xs:maxLength value="512"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <!--
+   Oznaka opstine iz kataloga.
+   -->
+   <xs:simpleType name="OpstinaTip">
+     <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{3}"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="IdentifikatorSubjektaTip">
+     <xs:restriction base="xs:string">
+        <xs:maxLength value="50"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PodaciOIsplatiocuTip">
+      <xs:sequence maxOccurs="1" minOccurs="1">
+         <!--
+         PP 2.1
+         Vrsta isplatioca prihoda.
+         
+         1	Pravno lice, nije iz budžeta
+         2	Pravno lice iz budžeta
+         3	Strano predstavništvo
+         4	Preduzetnik
+         5	Fizičko lice
+         6	Vojska RS
+         7	Poljoprivredno gazdinstvo
+         -->
+         <xs:element name="TipIsplatioca" maxOccurs="1" minOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                 <xs:enumeration value="1"/>
+                 <xs:enumeration value="2"/>
+                 <xs:enumeration value="3"/>
+                 <xs:enumeration value="4"/>
+                 <xs:enumeration value="5"/>
+                 <xs:enumeration value="6"/>
+                 <xs:enumeration value="7"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 2.2
+         PIB ili JMBG isplatioca prihoda.
+         -->
+         <xs:element name="PoreskiIdentifikacioniBroj" maxOccurs="1" minOccurs="1" type="tns:PIBJMBGTip"/>
+         <!--
+         PP 2.3
+         Broj zaposlenih kod poslodavca na poslednji dan obračunskog perioda, obavezan za konačnu isplatu zarada.
+         -->
+         <xs:element name="BrojZaposlenih" maxOccurs="1" minOccurs="0" type="xs:nonNegativeInteger"/>
+         <!--
+         PP 2.5
+         MBR isplatioca prihoda dodeljen u APR.
+         -->
+         <xs:element name="MaticniBrojisplatioca" maxOccurs="1" minOccurs="0" type="tns:MBRTip"/>
+         <!--
+         PP 2.6
+         Naziv ili prezime i ime isplatioca prihoda.
+         -->
+         <xs:element name="NazivPrezimeIme" maxOccurs="1" minOccurs="0" type="tns:String255"/>
+         <!--
+         PP 2.7
+         Podatak koji je deklarisan - Opština sedišta POB-a ili prebivališta (boravišta)  fizičkog lica
+         -->
+         <xs:element name="SedistePrebivaliste" maxOccurs="1" minOccurs="1" type="tns:OpstinaTip"/>
+         <!--
+         PP 2.8
+         Podatak koji je deklarisan - Telefonski broj za kontakt.
+         -->
+         <xs:element name="Telefon" maxOccurs="1" minOccurs="0" type="tns:String255"/>
+         <!--
+         PP 2.9
+         Podatak koji je deklarisan - Naziv ulice sedišta POB-a ili prebivališta (boravišta)  fizičkog lica.
+         -->
+         <xs:element name="UlicaIBroj" maxOccurs="1" minOccurs="0" type="tns:String255"/>
+         <!--
+         PP 2.10
+         Podatak koji je deklarisan - eMail adresa za kontakt.
+         -->
+         <xs:element name="eMail" maxOccurs="1" minOccurs="1" type="tns:eMailAdresaTip"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <!--
+   Datum u formatu YYYY-MM-DD.
+   -->
+   <xs:simpleType name="DatumTip">
+     <xs:restriction base="xs:date">
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PodaciOPrijaviTip">
+      <xs:sequence>
+         <!--
+         Oznaka deklaracije koju je klijent formirao.Šalje se opciono. Vraća se POB-u kroz status prijave i email obaveštenje. Ukoliko ga POB ne pošalje, neće je dobiti nazad.
+         -->
+         <xs:element name="KlijentskaOznakaDeklaracije" maxOccurs="1" minOccurs="0" type="tns:String255"/>
+         <!--
+         PP 1.1
+         Vrsta prijave.
+         
+         1	Opšta prijava
+         2	Po službenoj dužnosti
+         3	Samoprijavljivanje
+         4	Po nalazu kontrole
+         5	Po odluci suda
+         -->
+         <xs:element name="VrstaPrijave" maxOccurs="1" minOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                 <xs:enumeration value="1"/>
+                 <xs:enumeration value="2"/>
+                 <xs:enumeration value="3"/>
+                 <xs:enumeration value="4"/>
+                 <xs:enumeration value="5"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 1.2
+         Period za koji se podnosi prijava.
+         -->
+         <xs:element name="ObracunskiPeriod" maxOccurs="1" minOccurs="0" type="xs:gYearMonth"/>
+         <!--
+         PP 1.2a
+         Oznaka K - oznaka da li se prijavljuje konačna isplata zarada. 
+         -->
+         <xs:element name="OznakaZaKonacnu" maxOccurs="1" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                 <xs:enumeration value="K"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 1.3
+         Datum nastanka poreske obaveze.
+         -->
+         <xs:element name="DatumNastankaPoreskeObaveze" maxOccurs="1" minOccurs="0" type="tns:DatumTip"/>
+         <!--
+         PP 1.4
+         Datum plaćanja odnosno datum isplate prihoda.
+         -->
+         <xs:element name="DatumPlacanja" maxOccurs="1" minOccurs="0" type="tns:DatumTip"/>
+         <!--
+         PP 1.5
+         Vrsta izmene.
+         
+         1	Izmena
+         2	Po nalazu kontrole
+         3	Po nalogu suda
+         -->
+         <xs:element name="VrstaIzmene" maxOccurs="1" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                 <xs:enumeration value="1"/>
+                 <xs:enumeration value="2"/>
+                 <xs:enumeration value="3"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 1.5a
+         Jedinstveni idetifikator prijave koja se ovom prijavom menja. Polje je obavezno ukoliko je popunjeno polje VrstaIzmene. 
+         -->
+         <xs:element name="JIPD" maxOccurs="1" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:unsignedLong">
+                 <xs:totalDigits value="19"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 1.6
+         Broj rešenja kontrole ili suda na osnovu kojeg se menja/koriguje prijava.
+         
+         -->
+         <xs:element name="BrojResenja" maxOccurs="1" minOccurs="0" type="tns:String512"/>
+         <!--
+         PP 1.6a
+         Osnov korekcije/izmene.
+         
+         1	Žalba 1 stepen
+         2	Žalba 2 stepen
+         3	Po nalogu suda
+         -->
+         <xs:element name="Osnov" maxOccurs="1" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                 <xs:enumeration value="1"/>
+                 <xs:enumeration value="2"/>
+                 <xs:enumeration value="3"/>
+              </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <!--
+         PP 1.7
+         Broj primaoca u obračunskom delu prijave za koje je prijava podneta na najnižu osnovicu.
+         -->
+         <xs:element name="NajnizaOsnovica" maxOccurs="1" minOccurs="0" type="xs:nonNegativeInteger"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <xs:element name="PodaciPoreskeDeklaracije" type="tns:PodaciPoreskeDeklaracijeTip"/>
+   <xs:complexType name="PodaciPoreskeDeklaracijeTip">
+      <xs:sequence maxOccurs="1" minOccurs="1">
+         <xs:element name="PodaciOPrijavi" maxOccurs="1" minOccurs="1" type="tns:PodaciOPrijaviTip"/>
+         <xs:element name="PodaciOIsplatiocu" maxOccurs="1" minOccurs="1" type="tns:PodaciOIsplatiocuTip"/>
+         <xs:element name="DeklarisaniPrihodi" maxOccurs="1" minOccurs="1">
+            <xs:complexType>
+               <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                  <xs:element name="PodaciOPrihodima" type="tns:PodaciOPrihodimaTip"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <!--
+         Za internu upotrebu, POB ne deklariše pri podnošenju prijave
+         -->
+         <xs:element name="Ukupno" maxOccurs="1" minOccurs="0" type="tns:UkupnoTip"/>
+         <xs:element name="Kamata" maxOccurs="1" minOccurs="0" type="tns:KamataTip"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <xs:complexType name="UkupnoTip">
+      <xs:sequence maxOccurs="1" minOccurs="1">
+         <!--
+         PP 4.1
+         Ukupan bruto prihod koji je planiran da se isplati,
+         -->
+         <xs:element name="Bruto" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.2
+         Ukupna deklarisana osnovica za porez.
+         -->
+         <xs:element name="OsnovicaPorez" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.3
+         Ukupno deklarisani iznos poreza.
+         -->
+         <xs:element name="Porez" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.4
+         Ukupna deklarisana osnovica za doprinose,
+         -->
+         <xs:element name="OsnovicaDoprinosi" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.5
+         Ukupan deklarisani doprinos za penzijsko i invalidsko osiguranje,
+         -->
+         <xs:element name="PIO" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.6
+         Ukupan deklarisani doprinos za zdravstvenu zaštitu.
+         -->
+         <xs:element name="ZDR" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.7
+         Ukupan deklarisani doprinos za slučaj nezaposlenosti,
+         -->
+         <xs:element name="NEZ" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+         <!--
+         PP 4.8
+         Ukupan deklarisani doprinos za beneficirani PIO staž.
+         -->
+         <xs:element name="PIOBen" maxOccurs="1" minOccurs="1" type="tns:DecimalPozitivNulaTip"/>
+      </xs:sequence>   
+   </xs:complexType>
+   <!--
+   String dužine 1-255 karaktera.
+   -->
+   <xs:simpleType name="String255">
+     <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="255"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <!--
+   String dužine 1-512 karaktera.
+   -->
+   <xs:simpleType name="String512">
+     <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="512"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="PIBJMBGTip">
+     <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{9}"/>
+        <xs:pattern value="[0-9]{13}"/>
+     </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="MBRTip">
+     <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{8}"/>
+     </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:PodaciPoreskeDeklaracije xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://pid.purs.gov.rs" xsi:schemaLocation="http://pid.purs.gov.rs">
+	<tns:PodaciOPrijavi>
+		<tns:KlijentskaOznakaDeklaracije>20131104</tns:KlijentskaOznakaDeklaracije>
+		<tns:VrstaPrijave>1</tns:VrstaPrijave>
+		<tns:ObracunskiPeriod>2013-11</tns:ObracunskiPeriod>
+		<tns:DatumPlacanja>2014-01-15</tns:DatumPlacanja>
+	</tns:PodaciOPrijavi>
+	<tns:PodaciOIsplatiocu>
+		<tns:TipIsplatioca>1</tns:TipIsplatioca>
+		<tns:PoreskiIdentifikacioniBroj>122133401</tns:PoreskiIdentifikacioniBroj>
+		<tns:MaticniBrojisplatioca>17466621</tns:MaticniBrojisplatioca>
+		<tns:NazivPrezimeIme>"ПЕРСПЕКТИВА" д.о.о. БЕОГРАД</tns:NazivPrezimeIme>
+		<tns:SedistePrebivaliste>013</tns:SedistePrebivaliste>
+		<tns:Telefon>011 2345 567</tns:Telefon>
+		<tns:UlicaIBroj>Булевар платана 21</tns:UlicaIBroj>
+		<tns:eMail>office@perspektiva.co.rs</tns:eMail>
+	</tns:PodaciOIsplatiocu>
+	<tns:DeklarisaniPrihodi>
+		<tns:PodaciOPrihodima>
+			<tns:RedniBroj>1</tns:RedniBroj>
+			<tns:VrstaIdentifikatoraPrimaoca>1</tns:VrstaIdentifikatoraPrimaoca>
+			<tns:IdentifikatorPrimaoca>0000000000020</tns:IdentifikatorPrimaoca>
+			<tns:Prezime>Мирковић</tns:Prezime>
+			<tns:Ime>Станоје</tns:Ime>
+			<tns:OznakaPrebivalista>020</tns:OznakaPrebivalista>
+			<!--Isplata autorskog ugovora, zaposlena osoba.-->
+			<tns:SVP>101301000</tns:SVP>
+			<tns:Bruto>100000.00</tns:Bruto>
+			<tns:OsnovicaPorez>50000.00</tns:OsnovicaPorez>
+			<tns:Porez>10000.00</tns:Porez>
+			<tns:OsnovicaDoprinosi>50000.00</tns:OsnovicaDoprinosi>
+			<tns:PIO>12000.00</tns:PIO>
+			<tns:ZDR>0.00</tns:ZDR>
+			<tns:NEZ>0.00</tns:NEZ>
+			<tns:PIOBen>0.00</tns:PIOBen>
+		</tns:PodaciOPrihodima>
+		<tns:PodaciOPrihodima>
+			<tns:RedniBroj>2</tns:RedniBroj>
+			<tns:VrstaIdentifikatoraPrimaoca>1</tns:VrstaIdentifikatoraPrimaoca>
+			<tns:IdentifikatorPrimaoca>0000000000021</tns:IdentifikatorPrimaoca>
+			<tns:Prezime>Ђукић</tns:Prezime>
+			<tns:Ime>Милица</tns:Ime>
+			<tns:OznakaPrebivalista>020</tns:OznakaPrebivalista>
+			<!--Isplata autorskog ugovora, osoba bez zaposlenja.-->
+			<tns:SVP>105308000</tns:SVP>
+			<tns:Bruto>100000.00</tns:Bruto>
+			<tns:OsnovicaPorez>40000.00</tns:OsnovicaPorez>
+			<tns:Porez>8000.00</tns:Porez>
+			<tns:OsnovicaDoprinosi>40000.00</tns:OsnovicaDoprinosi>
+			<tns:PIO>9600.00</tns:PIO>
+			<tns:ZDR>4920.00</tns:ZDR>
+			<tns:NEZ>0.00</tns:NEZ>
+			<tns:PIOBen>0.00</tns:PIOBen>
+			<tns:DeklarisaniMFP>
+				<tns:MFP>
+					<tns:Oznaka>MFP.5</tns:Oznaka>
+					<tns:Vrednost>10000.00</tns:Vrednost>
+				</tns:MFP>
+			</tns:DeklarisaniMFP>
+		</tns:PodaciOPrihodima>
+	</tns:DeklarisaniPrihodi>
+</tns:PodaciPoreskeDeklaracije>

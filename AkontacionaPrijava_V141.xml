@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:PodaciPoreskeDeklaracije xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://pid.purs.gov.rs" xsi:schemaLocation="http://pid.purs.gov.rs">
+	<tns:PodaciOPrijavi>
+		<tns:KlijentskaOznakaDeklaracije>20131102</tns:KlijentskaOznakaDeklaracije>
+		<tns:VrstaPrijave>1</tns:VrstaPrijave>
+		<tns:ObracunskiPeriod>2013-11</tns:ObracunskiPeriod>
+		<tns:DatumPlacanja>2014-01-15</tns:DatumPlacanja>
+	</tns:PodaciOPrijavi>
+	<tns:PodaciOIsplatiocu>
+		<tns:TipIsplatioca>1</tns:TipIsplatioca>
+		<tns:PoreskiIdentifikacioniBroj>122133401</tns:PoreskiIdentifikacioniBroj>
+		<tns:MaticniBrojisplatioca>17466621</tns:MaticniBrojisplatioca>
+		<tns:NazivPrezimeIme>"ПЕРСПЕКТИВА" д.о.о. БЕОГРАД</tns:NazivPrezimeIme>
+		<tns:SedistePrebivaliste>013</tns:SedistePrebivaliste>
+		<tns:Telefon>011 2345 567</tns:Telefon>
+		<tns:UlicaIBroj>Булевар платана 21</tns:UlicaIBroj>
+		<tns:eMail>office@perspektiva.co.rs</tns:eMail>
+	</tns:PodaciOIsplatiocu>
+	<tns:DeklarisaniPrihodi>
+		<tns:PodaciOPrihodima>
+			<tns:RedniBroj>1</tns:RedniBroj>
+			<tns:VrstaIdentifikatoraPrimaoca>1</tns:VrstaIdentifikatoraPrimaoca>
+			<tns:IdentifikatorPrimaoca>0000000000010</tns:IdentifikatorPrimaoca>
+			<tns:Prezime>Ковачевић</tns:Prezime>
+			<tns:Ime>Марко</tns:Ime>
+			<tns:OznakaPrebivalista>020</tns:OznakaPrebivalista>
+			<!--Akontaciona isplata zarade.-->
+			<tns:SVP>101101000</tns:SVP>
+			<tns:Bruto>30000.00</tns:Bruto>
+			<tns:OsnovicaPorez>19000.00</tns:OsnovicaPorez>
+			<tns:Porez>1900.00</tns:Porez>
+			<tns:OsnovicaDoprinosi>30000.00</tns:OsnovicaDoprinosi>
+			<tns:PIO>7200.00</tns:PIO>
+			<tns:ZDR>3690.00</tns:ZDR>
+			<tns:NEZ>450.00</tns:NEZ>
+			<tns:PIOBen>0.00</tns:PIOBen>
+		</tns:PodaciOPrihodima>
+	</tns:DeklarisaniPrihodi>	
+</tns:PodaciPoreskeDeklaracije>

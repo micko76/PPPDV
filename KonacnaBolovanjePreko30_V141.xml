@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:PodaciPoreskeDeklaracije xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://pid.purs.gov.rs" xsi:schemaLocation="http://pid.purs.gov.rs">
+	<tns:PodaciOPrijavi>
+		<tns:KlijentskaOznakaDeklaracije>20131105</tns:KlijentskaOznakaDeklaracije>
+		<tns:VrstaPrijave>1</tns:VrstaPrijave>
+		<tns:ObracunskiPeriod>2013-11</tns:ObracunskiPeriod>
+		<tns:OznakaZaKonacnu>K</tns:OznakaZaKonacnu>
+		<tns:DatumPlacanja>2014-01-01</tns:DatumPlacanja>
+	</tns:PodaciOPrijavi>
+	<tns:PodaciOIsplatiocu>
+		<tns:TipIsplatioca>1</tns:TipIsplatioca>
+		<tns:PoreskiIdentifikacioniBroj>122133401</tns:PoreskiIdentifikacioniBroj>
+		<tns:BrojZaposlenih>3</tns:BrojZaposlenih>
+		<tns:MaticniBrojisplatioca>17466621</tns:MaticniBrojisplatioca>
+		<tns:NazivPrezimeIme>"ПЕРСПЕКТИВА" д.о.о. БЕОГРАД</tns:NazivPrezimeIme>
+		<tns:SedistePrebivaliste>013</tns:SedistePrebivaliste>
+		<tns:Telefon>011 2345 567</tns:Telefon>
+		<tns:UlicaIBroj>Булевар платана 21</tns:UlicaIBroj>
+		<tns:eMail>office@perspektiva.co.rs</tns:eMail>
+	</tns:PodaciOIsplatiocu>
+	<tns:DeklarisaniPrihodi>
+		<tns:PodaciOPrihodima>
+			<tns:RedniBroj>1</tns:RedniBroj>
+			<tns:VrstaIdentifikatoraPrimaoca>1</tns:VrstaIdentifikatoraPrimaoca>
+			<tns:IdentifikatorPrimaoca>0000000000030</tns:IdentifikatorPrimaoca>
+			<tns:Prezime>Микић</tns:Prezime>
+			<tns:Ime>Душан</tns:Ime>
+			<tns:OznakaPrebivalista>020</tns:OznakaPrebivalista>
+			<!--Bolovanje duže od 30 dana, poslodavac isplaćuje, RFZO refundira, pretpostavljena min.osn. 21.210 dinara.-->
+			<tns:SVP>101204000</tns:SVP>
+			<tns:BrojKalendarskihDana>27</tns:BrojKalendarskihDana>
+			<tns:BrojEfektivnihSati>160</tns:BrojEfektivnihSati>
+			<tns:MesecniFondSati>176</tns:MesecniFondSati>
+			<tns:Bruto>20000.00</tns:Bruto>
+			<tns:OsnovicaPorez>10000.00</tns:OsnovicaPorez>
+			<tns:Porez>1000.00</tns:Porez>
+			<tns:OsnovicaDoprinosi>20000.00</tns:OsnovicaDoprinosi>
+			<tns:PIO>4800.00</tns:PIO>
+			<tns:ZDR>2460.00</tns:ZDR>
+			<tns:NEZ>300.00</tns:NEZ>
+			<tns:PIOBen>0.00</tns:PIOBen>
+			<tns:DeklarisaniMFP>
+				<tns:MFP>
+					<tns:Oznaka>MFP.10</tns:Oznaka>
+					<tns:Vrednost>1</tns:Vrednost>
+				</tns:MFP>
+			</tns:DeklarisaniMFP>
+		</tns:PodaciOPrihodima>
+		<tns:PodaciOPrihodima>
+			<tns:RedniBroj>2</tns:RedniBroj>
+			<tns:VrstaIdentifikatoraPrimaoca>1</tns:VrstaIdentifikatoraPrimaoca>
+			<tns:IdentifikatorPrimaoca>0000000000030</tns:IdentifikatorPrimaoca>
+			<tns:Prezime>Микић</tns:Prezime>
+			<tns:Ime>Душан</tns:Ime>
+			<tns:OznakaPrebivalista>020</tns:OznakaPrebivalista>
+			<!--Konačna isplata zarade, vratio se na posao.-->
+			<tns:SVP>101101000</tns:SVP>
+			<tns:BrojKalendarskihDana>3</tns:BrojKalendarskihDana>
+			<tns:BrojEfektivnihSati>16</tns:BrojEfektivnihSati>
+			<tns:MesecniFondSati>176</tns:MesecniFondSati>
+			<tns:Bruto>1800.00</tns:Bruto>
+			<tns:OsnovicaPorez>800.00</tns:OsnovicaPorez>
+			<tns:Porez>80.00</tns:Porez>
+			<!--21210/176*16-->
+			<tns:OsnovicaDoprinosi>1928.18</tns:OsnovicaDoprinosi>
+			<tns:PIO>462.76</tns:PIO>
+			<tns:ZDR>237.17</tns:ZDR>
+			<tns:NEZ>28.92</tns:NEZ>
+			<tns:PIOBen>0.00</tns:PIOBen>
+			<tns:DeklarisaniMFP>
+				<tns:MFP>
+					<tns:Oznaka>MFP.10</tns:Oznaka>
+					<tns:Vrednost>1</tns:Vrednost>
+				</tns:MFP>
+			</tns:DeklarisaniMFP>
+		</tns:PodaciOPrihodima>
+	</tns:DeklarisaniPrihodi>
+</tns:PodaciPoreskeDeklaracije>
