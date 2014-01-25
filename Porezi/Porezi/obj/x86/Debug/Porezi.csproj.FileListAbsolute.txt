@@ -1,0 +1,11 @@
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\bin\Debug\Porezi.exe
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\bin\Debug\Porezi.pdb
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\obj\x86\Debug\Porezi.exe
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\obj\x86\Debug\Porezi.pdb
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\bin\Debug\FileHelpers.dll
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Porezi\Porezi\bin\Debug\FileHelpers.xml
+C:\Users\Milan\Documents\Visual Studio 2013\Projects\Porezi\Porezi\obj\x86\Debug\Porezi.exe
+C:\Users\Milan\Documents\Visual Studio 2013\Projects\Porezi\Porezi\obj\x86\Debug\Porezi.pdb
+C:\Users\Milan\Documents\Visual Studio 2013\Projects\Porezi\Porezi\bin\Debug\Porezi.exe
+C:\Users\Milan\Documents\Visual Studio 2013\Projects\Porezi\Porezi\bin\Debug\Porezi.pdb
