@@ -16,7 +16,7 @@ namespace PPPPDPrijava
     using FileHelpers;
 
 
-    [System.Xml.Serialization.XmlRoot("qnsPodaciPoreskeDeklaracije", Namespace = "http://pid.purs.gov.rs", IsNullable = true)]
+    [System.Xml.Serialization.XmlRoot("PodaciPoreskeDeklaracije", Namespace = "http://pid.purs.gov.rs", IsNullable = true)]
     public partial class PodaciPoreskeDeklaracijeTip
     {
         
@@ -26,19 +26,19 @@ namespace PPPPDPrijava
         
         private PodaciPoreskeDeklaracijeTipDeklarisaniPrihodi deklarisaniPrihodiField;
 
-        // private UkupnoTip ukupnoField;
+        private UkupnoTip ukupnoField;
 
-        // private KamataTip kamataField;
+        private KamataTip kamataField;
 
         public PodaciPoreskeDeklaracijeTip()
         {
-            //   this.kamataField = new KamataTip();
-            // this.ukupnoField = new UkupnoTip();
+            this.kamataField = new KamataTip();
+            this.ukupnoField = new UkupnoTip();
             this.deklarisaniPrihodiField = new PodaciPoreskeDeklaracijeTipDeklarisaniPrihodi();
             this.podaciOIsplatiocuField = new PodaciOIsplatiocuTip();
             this.podaciOPrijaviField = new PodaciOPrijaviTip();
         }
-        [System.Xml.Serialization.XmlElement("qnsPodaciOPrijavi")]
+        [System.Xml.Serialization.XmlElement("PodaciOPrijavi")]
         public PodaciOPrijaviTip PodaciOPrijavi
         {
             get
@@ -50,7 +50,7 @@ namespace PPPPDPrijava
                 this.podaciOPrijaviField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPodaciOIsplatiocu")]
+        [System.Xml.Serialization.XmlElement("PodaciOIsplatiocu")]
         public PodaciOIsplatiocuTip PodaciOIsplatiocu
         {
             get
@@ -62,7 +62,7 @@ namespace PPPPDPrijava
                 this.podaciOIsplatiocuField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsDeklarisaniPrihodi")]
+        [System.Xml.Serialization.XmlElement("DeklarisaniPrihodi")]
         public PodaciPoreskeDeklaracijeTipDeklarisaniPrihodi DeklarisaniPrihodi
         {
             get
@@ -74,8 +74,8 @@ namespace PPPPDPrijava
                 this.deklarisaniPrihodiField = value;
             }
         }
-
-        /* public UkupnoTip Ukupno {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+         public UkupnoTip Ukupno {
              get {
                  return this.ukupnoField;
              }
@@ -83,7 +83,7 @@ namespace PPPPDPrijava
                  this.ukupnoField = value;
              }
          }
-        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
          public KamataTip Kamata {
              get {
                  return this.kamataField;
@@ -91,7 +91,7 @@ namespace PPPPDPrijava
              set {
                  this.kamataField = value;
              }
-         }*/
+         }
     }
     
 
@@ -133,7 +133,7 @@ namespace PPPPDPrijava
         private int najnizaOsnovicaField;
 
         private bool najnizaOsnovicaFieldSpecified;
-        [System.Xml.Serialization.XmlElement("qnsKlijentskaOznakaDeklaracije")]
+        [System.Xml.Serialization.XmlElement("KlijentskaOznakaDeklaracije")]
         public ulong KlijentskaOznakaDeklaracije
         {
             get
@@ -145,7 +145,7 @@ namespace PPPPDPrijava
                 this.klijentskaOznakaDeklaracijeField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsVrstaPrijave")]
+        [System.Xml.Serialization.XmlElement("VrstaPrijave")]
         public int VrstaPrijave
         {
             get
@@ -157,7 +157,7 @@ namespace PPPPDPrijava
                 this.vrstaPrijaveField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsObracunskiPeriod")]
+        [System.Xml.Serialization.XmlElement("ObracunskiPeriod")]
         public string ObracunskiPeriod
         {
             get
@@ -169,7 +169,7 @@ namespace PPPPDPrijava
                 this.obracunskiPeriodField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsOznakaZaKonacnu")]
+        [System.Xml.Serialization.XmlElement("OznakaZaKonacnu")]
         public PodaciOPrijaviTipOznakaZaKonacnu OznakaZaKonacnu
         {
             get
@@ -219,7 +219,7 @@ namespace PPPPDPrijava
                 this.datumNastankaPoreskeObavezeFieldSpecified = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsDatumPlacanja")]
+        [System.Xml.Serialization.XmlElement("DatumPlacanja")]
         public string DatumPlacanja
         {
             get
@@ -690,7 +690,7 @@ namespace PPPPDPrijava
         {
             this.deklarisaniMFPField = new PodaciOPrihodimaTipDeklarisaniMFP();
         }
-        [System.Xml.Serialization.XmlElement("qnsRedniBroj")]
+        [System.Xml.Serialization.XmlElement("RedniBroj")]
         public uint RedniBroj
         {
             get
@@ -702,7 +702,7 @@ namespace PPPPDPrijava
                 this.redniBrojField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsVrstaIdentifikatoraPrimaoca")]
+        [System.Xml.Serialization.XmlElement("VrstaIdentifikatoraPrimaoca")]
         public int VrstaIdentifikatoraPrimaoca
         {
             get
@@ -714,7 +714,7 @@ namespace PPPPDPrijava
                 this.vrstaIdentifikatoraPrimaocaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsIdentifikatorPrimaoca")]
+        [System.Xml.Serialization.XmlElement("IdentifikatorPrimaoca")]
         public string IdentifikatorPrimaoca
         {
             get
@@ -726,7 +726,7 @@ namespace PPPPDPrijava
                 this.identifikatorPrimaocaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPrezime")]
+        [System.Xml.Serialization.XmlElement("Prezime")]
         public string Prezime
         {
             get
@@ -738,7 +738,7 @@ namespace PPPPDPrijava
                 this.prezimeField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsIme")]
+        [System.Xml.Serialization.XmlElement("Ime")]
         public string Ime
         {
             get
@@ -750,7 +750,7 @@ namespace PPPPDPrijava
                 this.imeField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsOznakaPrebivalista")]
+        [System.Xml.Serialization.XmlElement("OznakaPrebivalista")]
         public string OznakaPrebivalista
         {
             get
@@ -762,7 +762,7 @@ namespace PPPPDPrijava
                 this.oznakaPrebivalistaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsSVP")]
+        [System.Xml.Serialization.XmlElement("SVP")]
         public int SVP
         {
             get
@@ -774,7 +774,7 @@ namespace PPPPDPrijava
                 this.sVPField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsBrojKalendarskihDana")]
+        [System.Xml.Serialization.XmlElement("BrojKalendarskihDana")]
         public int BrojKalendarskihDana
         {
             get
@@ -799,7 +799,7 @@ namespace PPPPDPrijava
                 this.brojKalendarskihDanaFieldSpecified = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsBrojEfektivnihSati")]
+        [System.Xml.Serialization.XmlElement("BrojEfektivnihSati")]
         public decimal BrojEfektivnihSati
         {
             get
@@ -824,7 +824,7 @@ namespace PPPPDPrijava
                 this.brojEfektivnihSatiFieldSpecified = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsMesecniFondSati")]
+        [System.Xml.Serialization.XmlElement("MesecniFondSati")]
         public decimal MesecniFondSati
         {
             get
@@ -849,7 +849,7 @@ namespace PPPPDPrijava
                 this.mesecniFondSatiFieldSpecified = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsBruto")]
+        [System.Xml.Serialization.XmlElement("Bruto")]
         public decimal Bruto
         {
             get
@@ -861,7 +861,7 @@ namespace PPPPDPrijava
                 this.brutoField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsOsnovicaPorez")]
+        [System.Xml.Serialization.XmlElement("OsnovicaPorez")]
         public decimal OsnovicaPorez
         {
             get
@@ -873,7 +873,7 @@ namespace PPPPDPrijava
                 this.osnovicaPorezField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPorez")]
+        [System.Xml.Serialization.XmlElement("Porez")]
         public decimal Porez
         {
             get
@@ -885,7 +885,7 @@ namespace PPPPDPrijava
                 this.porezField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsOsnovicaDoprinosi")]
+        [System.Xml.Serialization.XmlElement("OsnovicaDoprinosi")]
         public decimal OsnovicaDoprinosi
         {
             get
@@ -897,7 +897,7 @@ namespace PPPPDPrijava
                 this.osnovicaDoprinosiField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPIO")]
+        [System.Xml.Serialization.XmlElement("PIO")]
         public decimal PIO
         {
             get
@@ -909,7 +909,7 @@ namespace PPPPDPrijava
                 this.pIOField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsZDR")]
+        [System.Xml.Serialization.XmlElement("ZDR")]
         public decimal ZDR
         {
             get
@@ -921,7 +921,7 @@ namespace PPPPDPrijava
                 this.zDRField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsNEZ")]
+        [System.Xml.Serialization.XmlElement("NEZ")]
         public decimal NEZ
         {
             get
@@ -933,7 +933,7 @@ namespace PPPPDPrijava
                 this.nEZField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPIOBen")]
+        [System.Xml.Serialization.XmlElement("PIOBen")]
         public decimal PIOBen
         {
             get
@@ -1006,7 +1006,7 @@ namespace PPPPDPrijava
         private string ulicaIBrojField;
 
         private string eMailField;
-        [System.Xml.Serialization.XmlElement("qnsTipIsplatioca")]
+        [System.Xml.Serialization.XmlElement("TipIsplatioca")]
         public int TipIsplatioca
         {
             get
@@ -1018,7 +1018,7 @@ namespace PPPPDPrijava
                 this.tipIsplatiocaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsVrstaIdentifikatorIsplatioca")]
+        [System.Xml.Serialization.XmlElement("VrstaIdentifikatorIsplatioca")]
         public int VrstaIdentifikatorIsplatioca
         {
             get
@@ -1030,7 +1030,7 @@ namespace PPPPDPrijava
                 this.vrstaIdentifikatorIsplatiocaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsPoreskiIdentifikacioniBroj")]
+        [System.Xml.Serialization.XmlElement("PoreskiIdentifikacioniBroj")]
         public string PoreskiIdentifikacioniBroj
         {
             get
@@ -1042,7 +1042,7 @@ namespace PPPPDPrijava
                 this.poreskiIdentifikacioniBrojField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsBrojZaposlenih")]
+        [System.Xml.Serialization.XmlElement("BrojZaposlenih")]
         public string BrojZaposlenih
         {
             get
@@ -1054,7 +1054,7 @@ namespace PPPPDPrijava
                 this.brojZaposlenihField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsMaticniBrojIsplatioca")]
+        [System.Xml.Serialization.XmlElement("MaticniBrojIsplatioca")]
         public string MaticniBrojisplatioca
         {
             get
@@ -1066,7 +1066,7 @@ namespace PPPPDPrijava
                 this.maticniBrojisplatiocaField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsNazivPrezimeIme")]
+        [System.Xml.Serialization.XmlElement("NazivPrezimeIme")]
         public string NazivPrezimeIme
         {
             get
@@ -1078,7 +1078,7 @@ namespace PPPPDPrijava
                 this.nazivPrezimeImeField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsSedistePrebivaliste")]
+        [System.Xml.Serialization.XmlElement("SedistePrebivaliste")]
         public string SedistePrebivaliste
         {
             get
@@ -1090,7 +1090,7 @@ namespace PPPPDPrijava
                 this.sedistePrebivalisteField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsTelefon")]
+        [System.Xml.Serialization.XmlElement("Telefon")]
         public string Telefon
         {
             get
@@ -1102,7 +1102,7 @@ namespace PPPPDPrijava
                 this.telefonField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnsUlicaIBroj")]
+        [System.Xml.Serialization.XmlElement("UlicaIBroj")]
         public string UlicaIBroj
         {
             get
@@ -1114,7 +1114,7 @@ namespace PPPPDPrijava
                 this.ulicaIBrojField = value;
             }
         }
-        [System.Xml.Serialization.XmlElement("qnseMail")]
+        [System.Xml.Serialization.XmlElement("eMail")]
         public string eMail
         {
             get
@@ -1137,7 +1137,7 @@ namespace PPPPDPrijava
         {
             this.podaciOPrihodimaField = new List<PodaciOPrihodimaTip>();
         }
-        [System.Xml.Serialization.XmlElement("qnsPodaciOPrihodima")]
+        [System.Xml.Serialization.XmlElement("PodaciOPrihodima")]
         public List<PodaciOPrihodimaTip> PodaciOPrihodima
         {
             get

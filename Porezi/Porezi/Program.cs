@@ -17,7 +17,7 @@ namespace ConsoleApplication1
         static public void Serialize(PodaciPoreskeDeklaracijeTip prijava)
         {
             XmlSerializer swosh = new XmlSerializer(typeof(PodaciPoreskeDeklaracijeTip));
-            TextWriter pisac = new StreamWriter(@"J:\bum\Porezi,Prijave i ostalo\prijavicaprobna.xml");
+            TextWriter pisac = new StreamWriter(@"F:\Porezi,Prijave i ostalo\prijavicaprobna.xml");
             swosh.Serialize(pisac, prijava);
             pisac.Close();
         }
@@ -25,7 +25,7 @@ namespace ConsoleApplication1
         {
 
             FileHelperEngine motorce = new FileHelperEngine(typeof(Popuna));
-            info = motorce.ReadFile(@"J:\bum\Porezi,Prijave i ostalo\ppppd septembar II deo 2013-simpo.txt") as Popuna[];
+            info = motorce.ReadFile(@"F:\Porezi,Prijave i ostalo\ppppd septembar II deo 2013-simpo.txt") as Popuna[];
             int i = 0;
             while (i < info.Length)
             {
@@ -59,7 +59,7 @@ namespace ConsoleApplication1
         static public int Brojac()
         {
             FileHelperEngine motorce = new FileHelperEngine(typeof(Popuna));
-            Popuna[] sp = motorce.ReadFile(@"J:\bum\Porezi,Prijave i ostalo\ppppd septembar II deo 2013-simpo.txt") as Popuna[];
+            Popuna[] sp = motorce.ReadFile(@"F:\Porezi,Prijave i ostalo\ppppd septembar II deo 2013-simpo.txt") as Popuna[];
             return sp.Length;
  
         }
@@ -72,7 +72,7 @@ namespace ConsoleApplication1
             //podaci o prijavi, ovo ide uvek isto//
             prijava.PodaciOPrijavi.KlijentskaOznakaDeklaracije = 21212121;
             prijava.PodaciOPrijavi.VrstaPrijave = 1;
-            prijava.PodaciOPrijavi.ObracunskiPeriod = "2014-1";
+            prijava.PodaciOPrijavi.ObracunskiPeriod = "2013-9";
             prijava.PodaciOPrijavi.OznakaZaKonacnu = new PodaciOPrijaviTipOznakaZaKonacnu();
             prijava.PodaciOPrijavi.OznakaZaKonacnuSpecified = true;
             prijava.PodaciOPrijavi.DatumPlacanja = System.DateTime.Now.ToString("yyyy-MM-dd");
