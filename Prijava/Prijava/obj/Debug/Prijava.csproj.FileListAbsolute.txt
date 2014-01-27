@@ -7,3 +7,6 @@ c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\P
 c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.csproj.GenerateResource.Cache
 c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.exe
 c:\users\milan\documents\visual studio 2013\Projects\Prijava\Prijava\obj\Debug\Prijava.pdb
+C:\Documents and Settings\Micko\PPPDV\Prijava\Prijava\bin\Debug\Prijava.exe.config
+C:\Documents and Settings\Micko\PPPDV\Prijava\Prijava\obj\Debug\Prijava.exe
+C:\Documents and Settings\Micko\PPPDV\Prijava\Prijava\obj\Debug\Prijava.pdb
