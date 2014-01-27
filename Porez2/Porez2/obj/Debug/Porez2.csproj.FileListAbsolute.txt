@@ -1,0 +1,6 @@
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\Porez2.exe.config
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\Porez2.exe
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\Porez2.pdb
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\FileHelpers.dll
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\obj\Debug\Porez2.exe
+C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\obj\Debug\Porez2.pdb
