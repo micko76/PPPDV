@@ -1,0 +1,6 @@
+C:\xml2\Porezi2\Porezi2\bin\Debug\Porezi2.exe
+C:\xml2\Porezi2\Porezi2\bin\Debug\Porezi2.pdb
+C:\xml2\Porezi2\Porezi2\bin\Debug\FileHelpers.dll
+C:\xml2\Porezi2\Porezi2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\xml2\Porezi2\Porezi2\obj\x86\Debug\Porezi2.exe
+C:\xml2\Porezi2\Porezi2\obj\x86\Debug\Porezi2.pdb

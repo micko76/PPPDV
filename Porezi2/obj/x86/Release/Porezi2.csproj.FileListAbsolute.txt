@@ -1,0 +1,13 @@
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\bin\Release\FileHelpers.dll
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\bin\Release\FileHelpers.xml
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+C:\Documents and Settings\Micko\Local Settings\Application Data\Temporary Projects\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb
+C:\xml2\Porezi2\Porezi2\bin\Release\Porezi2.exe
+C:\xml2\Porezi2\Porezi2\bin\Release\Porezi2.pdb
+C:\xml2\Porezi2\Porezi2\bin\Release\FileHelpers.xml
+C:\xml2\Porezi2\Porezi2\obj\x86\Release\ResolveAssemblyReference.cache
+C:\xml2\Porezi2\Porezi2\obj\x86\Release\Porezi2.exe
+C:\xml2\Porezi2\Porezi2\obj\x86\Release\Porezi2.pdb
