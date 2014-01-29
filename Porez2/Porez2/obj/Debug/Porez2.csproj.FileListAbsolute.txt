@@ -4,3 +4,6 @@ C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\Por
 C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\bin\Debug\FileHelpers.dll
 C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\obj\Debug\Porez2.exe
 C:\Users\Milan\documents\visual studio 2013\Projects\Porez2\Porez2\obj\Debug\Porez2.pdb
+C:\Documents and Settings\Micko\PPPDV\Porez2\Porez2\bin\Debug\Porez2.exe.config
+C:\Documents and Settings\Micko\PPPDV\Porez2\Porez2\obj\Debug\Porez2.exe
+C:\Documents and Settings\Micko\PPPDV\Porez2\Porez2\obj\Debug\Porez2.pdb
