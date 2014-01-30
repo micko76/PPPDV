@@ -1,0 +1,7 @@
+C:\xml2\KonacnaPrijava\KonacnaPrijava\bin\Release\KonacnaPrijava.exe
+C:\xml2\KonacnaPrijava\KonacnaPrijava\bin\Release\KonacnaPrijava.pdb
+C:\xml2\KonacnaPrijava\KonacnaPrijava\bin\Release\FileHelpers.dll
+C:\xml2\KonacnaPrijava\KonacnaPrijava\bin\Release\FileHelpers.xml
+C:\xml2\KonacnaPrijava\KonacnaPrijava\obj\x86\Release\ResolveAssemblyReference.cache
+C:\xml2\KonacnaPrijava\KonacnaPrijava\obj\x86\Release\KonacnaPrijava.exe
+C:\xml2\KonacnaPrijava\KonacnaPrijava\obj\x86\Release\KonacnaPrijava.pdb
