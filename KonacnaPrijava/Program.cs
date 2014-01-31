@@ -18,6 +18,7 @@ namespace ConsoleApplication1
         {
             XmlSerializer swosh = new XmlSerializer(typeof(PodaciPoreskeDeklaracijeTip));
             TextWriter pisac = new StreamWriter(@"D:\Simpen\konacna.xml");
+            TextReader citac = new StreamReader(@"D:\Simpen\konacna.xml");
             swosh.Serialize(pisac, prijava);
             pisac.Close();
         }
@@ -40,7 +41,7 @@ namespace ConsoleApplication1
                 infolista.AddLast(pop);
             }
             LinkedListNode<Popuna> tour = infolista.First;
-            
+
             //int i = 0;
             //try
             //{
@@ -57,104 +58,104 @@ namespace ConsoleApplication1
                 List<MultifunkcionalnoPolje> pomocni = new List<MultifunkcionalnoPolje>();
                 switch (tour.Value.SVP)
                 {
-                    
+
                     case 101101000:
                         {
-                            
-                                if (tour1!=null && tour.Value.IdentifikatorPrimaoca == tour1.Value.IdentifikatorPrimaoca)
-                                {
-                                    sp.RedniBroj = tour.Value.RedniBroj;
-                                    sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
-                                    sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
-                                    sp.Ime = tour.Value.Ime.Trim();
-                                    sp.Prezime = tour.Value.Prezime.Trim();
-                                    sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
-                                    sp.SVP = tour.Value.SVP;
-                                    sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
-                                    sp.MesecniFondSati = tour.Value.MesecniFondSati;
-                                    sp.MesecniFondSatiSpecified = true;
-                                    sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
-                                    sp.BrojEfektivnihSatiSpecified = true;
-                                    sp.Bruto = tour.Value.Bruto;
-                                    sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
-                                    sp.Porez = tour.Value.Porez;
-                                    sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
-                                    sp.PIO = tour.Value.PIO;
-                                    sp.ZDR = tour.Value.ZDR;
-                                    sp.NEZ = tour.Value.NEZ;
-                                    sp.PIOBen = tour.Value.PIOBen;
-                                    pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
-                                    pom.Vrednost = Convert.ToString(tour.Value.MF1);
-                                    pomocni.Add(pom);
-                                    pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
-                                    pom1.Vrednost = Convert.ToString(tour.Value.MF2);
-                                    pomocni.Add(pom1);
-                                    pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
-                                    pom2.Vrednost = Convert.ToString(tour.Value.MF4);
-                                    pomocni.Add(pom2);
-                                    pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
-                                    pom5.Vrednost = "1";
-                                    pomocni.Add(pom5);
-                                    pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
-                                    pom3.Vrednost = Convert.ToString(tour.Value.MF11);
-                                    pomocni.Add(pom3);
-                                    pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
-                                    pom4.Vrednost = Convert.ToString(tour.Value.MF12);
-                                    pomocni.Add(pom4);
-                                    sp.DeklarisaniMFP.MFP.AddRange(pomocni);
-                                    sp.DeklarisaniMFPSpecified = true;
-                                    spisak.Add(sp);
-                                    tour = tour1;
-                                    
-                                }
-                                else
-                                {
-                                    sp.RedniBroj = tour.Value.RedniBroj;
-                                    sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
-                                    sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
-                                    sp.Ime = tour.Value.Ime.Trim();
-                                    sp.Prezime = tour.Value.Prezime.Trim();
-                                    sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
-                                    sp.SVP = tour.Value.SVP;
-                                    sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
-                                    sp.MesecniFondSati = tour.Value.MesecniFondSati;
-                                    sp.MesecniFondSatiSpecified = true;
-                                    sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
-                                    sp.BrojEfektivnihSatiSpecified = true;
-                                    sp.Bruto = tour.Value.Bruto;
-                                    sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
-                                    sp.Porez = tour.Value.Porez;
-                                    sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
-                                    sp.PIO = tour.Value.PIO;
-                                    sp.ZDR = tour.Value.ZDR;
-                                    sp.NEZ = tour.Value.NEZ;
-                                    sp.PIOBen = tour.Value.PIOBen;
-                                    pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
-                                    pom.Vrednost = Convert.ToString(tour.Value.MF1);
-                                    pomocni.Add(pom);
-                                    pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
-                                    pom1.Vrednost = Convert.ToString(tour.Value.MF2);
-                                    pomocni.Add(pom1);
-                                    pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
-                                    pom2.Vrednost = Convert.ToString(tour.Value.MF4);
-                                    pomocni.Add(pom2);
-                                    //pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
-                                    // pom5.Vrednost = "1";
-                                    // pomocni.Add(pom5);
-                                    pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
-                                    pom3.Vrednost = Convert.ToString(tour.Value.MF11);
-                                    pomocni.Add(pom3);
-                                    pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
-                                    pom4.Vrednost = Convert.ToString(tour.Value.MF12);
-                                    pomocni.Add(pom4);
-                                    sp.DeklarisaniMFP.MFP.AddRange(pomocni);
-                                    sp.DeklarisaniMFPSpecified = true;
-                                    spisak.Add(sp);
-                                    tour = tour.Next;
-                                }
+
+                            if (tour1 != null && tour.Value.IdentifikatorPrimaoca == tour1.Value.IdentifikatorPrimaoca)
+                            {
+                                sp.RedniBroj = tour.Value.RedniBroj;
+                                sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                sp.Ime = tour.Value.Ime.Trim();
+                                sp.Prezime = tour.Value.Prezime.Trim();
+                                sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                sp.SVP = tour.Value.SVP;
+                                sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                sp.MesecniFondSatiSpecified = true;
+                                sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                sp.BrojEfektivnihSatiSpecified = true;
+                                sp.Bruto = tour.Value.Bruto;
+                                sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                sp.Porez = tour.Value.Porez;
+                                sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                sp.PIO = tour.Value.PIO;
+                                sp.ZDR = tour.Value.ZDR;
+                                sp.NEZ = tour.Value.NEZ;
+                                sp.PIOBen = tour.Value.PIOBen;
+                                pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                                pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                                pomocni.Add(pom);
+                                pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                                pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                                pomocni.Add(pom1);
+                                pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                                pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                                pomocni.Add(pom2);
+                                pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                                pom5.Vrednost = "1";
+                                pomocni.Add(pom5);
+                                //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                                //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                                //pomocni.Add(pom3);
+                                pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                                pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                                pomocni.Add(pom4);
+                                sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                                sp.DeklarisaniMFPSpecified = true;
+                                spisak.Add(sp);
+                                tour = tour1;
 
                             }
-                        
+                            else
+                            {
+                                sp.RedniBroj = tour.Value.RedniBroj;
+                                sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                sp.Ime = tour.Value.Ime.Trim();
+                                sp.Prezime = tour.Value.Prezime.Trim();
+                                sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                sp.SVP = tour.Value.SVP;
+                                sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                sp.MesecniFondSatiSpecified = true;
+                                sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                sp.BrojEfektivnihSatiSpecified = true;
+                                sp.Bruto = tour.Value.Bruto;
+                                sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                sp.Porez = tour.Value.Porez;
+                                sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                sp.PIO = tour.Value.PIO;
+                                sp.ZDR = tour.Value.ZDR;
+                                sp.NEZ = tour.Value.NEZ;
+                                sp.PIOBen = tour.Value.PIOBen;
+                                pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                                pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                                pomocni.Add(pom);
+                                pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                                pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                                pomocni.Add(pom1);
+                                pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                                pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                                pomocni.Add(pom2);
+                                //pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                                //pom5.Vrednost = "1";
+                                //pomocni.Add(pom5);
+                                //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                                //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                                //pomocni.Add(pom3);
+                                pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                                pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                                pomocni.Add(pom4);
+                                sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                                sp.DeklarisaniMFPSpecified = true;
+                                spisak.Add(sp);
+                                tour = tour.Next;
+                            }
+
+                        }
+
                         #region MyRegion
 
 
@@ -240,22 +241,22 @@ namespace ConsoleApplication1
                         sp.NEZ = tour.Value.NEZ;
                         sp.PIOBen = tour.Value.PIOBen;
                         pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
-                        pom.Vrednost = Convert.ToString(tour.Value.MF1);
+                        pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
                         pomocni.Add(pom);
                         pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
-                        pom1.Vrednost = Convert.ToString(tour.Value.MF2);
+                        pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
                         pomocni.Add(pom1);
                         pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
-                        pom2.Vrednost = Convert.ToString(tour.Value.MF4);
+                        pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
                         pomocni.Add(pom2);
                         pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
                         pom5.Vrednost = "1";
                         pomocni.Add(pom5);
-                        pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
-                        pom3.Vrednost = Convert.ToString(tour.Value.MF11);
-                        pomocni.Add(pom3);
+                        //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                        //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                        //pomocni.Add(pom3);
                         pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
-                        pom4.Vrednost = Convert.ToString(tour.Value.MF12);
+                        pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
                         pomocni.Add(pom4);
                         sp.DeklarisaniMFP.MFP.AddRange(pomocni);
                         sp.DeklarisaniMFPSpecified = true;
@@ -284,22 +285,22 @@ namespace ConsoleApplication1
                         sp.NEZ = tour.Value.NEZ;
                         sp.PIOBen = tour.Value.PIOBen;
                         pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
-                        pom.Vrednost = Convert.ToString(tour.Value.MF1);
+                        pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
                         pomocni.Add(pom);
                         pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
-                        pom1.Vrednost = Convert.ToString(tour.Value.MF2);
+                        pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
                         pomocni.Add(pom1);
                         pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
-                        pom2.Vrednost = Convert.ToString(tour.Value.MF4);
+                        pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
                         pomocni.Add(pom2);
                         pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
                         pom5.Vrednost = "1";
                         pomocni.Add(pom5);
-                        pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
-                        pom3.Vrednost = Convert.ToString(tour.Value.MF11);
-                        pomocni.Add(pom3);
+                        //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                        //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                        //pomocni.Add(pom3);
                         pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
-                        pom4.Vrednost = Convert.ToString(tour.Value.MF12);
+                        pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
                         pomocni.Add(pom4);
                         sp.DeklarisaniMFP.MFP.AddRange(pomocni);
                         sp.DeklarisaniMFPSpecified = true;
@@ -374,7 +375,7 @@ namespace ConsoleApplication1
                 while (tour.Next != null)
                 {
 
-                    while (pomocni.Next != null)
+                    while (pomocni != null)
                     {
                         if (tour.Value.IdentifikatorPrimaoca != pomocni.Value.IdentifikatorPrimaoca)
                         {
@@ -386,7 +387,7 @@ namespace ConsoleApplication1
                     }
                     tour = tour.Next;
                 }
-
+                #region Stari Brojac
                 /*  int broj = 1;
                   int i = 0;
                   int j = 1;
@@ -401,8 +402,9 @@ namespace ConsoleApplication1
                       if (j < sp.Length - 1)
                           j++;
                   }*/
+                #endregion
 
-                return broj;
+                return broj + 1;
             }
             catch (FileNotFoundException e)
             {
