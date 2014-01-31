@@ -755,6 +755,7 @@ namespace PPPPDPrijava
 
         
         /// <remarks/>
+        
         [System.Xml.Serialization.XmlEnumAttribute("MFP.1")]
         MFP1,
 
@@ -1243,7 +1244,7 @@ namespace PPPPDPrijava
     public partial class PodaciOPrihodimaTipDeklarisaniMFP {
 
 
-        
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
         private List<MultifunkcionalnoPolje> mFPField;
 
         
