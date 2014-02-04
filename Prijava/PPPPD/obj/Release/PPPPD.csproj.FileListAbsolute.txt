@@ -1,0 +1,7 @@
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\bin\Release\PPPPD.dll
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\bin\Release\PPPPD.pdb
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\bin\Release\FileHelpers.dll
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\bin\Release\FileHelpers.xml
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\obj\Release\PPPPD.dll
+C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\PPPPD\obj\Release\PPPPD.pdb
