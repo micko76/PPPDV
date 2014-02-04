@@ -20,3 +20,11 @@ C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava
 C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\Prijava\bin\Debug\PPPPD.dll
 C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\Prijava\bin\Debug\PPPPD.pdb
 C:\Documents and Settings\Micko\My Documents\Visual Studio 2010\Projects\Prijava\Prijava\bin\Debug\Prijava.exe.config
+C:\PorezProjekat\Prijava\bin\Debug\Prijava.exe.config
+C:\PorezProjekat\Prijava\bin\Debug\Prijava.exe
+C:\PorezProjekat\Prijava\bin\Debug\Prijava.pdb
+C:\PorezProjekat\Prijava\obj\x86\Debug\Prijava.Form1.resources
+C:\PorezProjekat\Prijava\obj\x86\Debug\Prijava.Properties.Resources.resources
+C:\PorezProjekat\Prijava\obj\x86\Debug\Prijava.csproj.GenerateResource.Cache
+C:\PorezProjekat\Prijava\obj\x86\Debug\Prijava.exe
+C:\PorezProjekat\Prijava\obj\x86\Debug\Prijava.pdb

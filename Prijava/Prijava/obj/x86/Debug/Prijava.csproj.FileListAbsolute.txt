@@ -16,3 +16,11 @@ C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava
 C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\Prijava\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\Prijava\bin\Debug\Prijava.exe
 C:\Documents and Settings\Micko\my documents\visual studio 2010\Projects\Prijava\Prijava\bin\Debug\Prijava.pdb
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.exe
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.pdb
+C:\PorezProjekat\Prijava\Prijava\bin\Debug\Prijava.exe
+C:\PorezProjekat\Prijava\Prijava\bin\Debug\Prijava.pdb
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.csprojResolveAssemblyReference.cache
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.Form1.resources
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.Properties.Resources.resources
+C:\PorezProjekat\Prijava\Prijava\obj\x86\Debug\Prijava.csproj.GenerateResource.Cache
