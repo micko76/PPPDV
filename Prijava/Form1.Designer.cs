@@ -88,10 +88,11 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(390, 175);
+            this.dateTimePicker1.Location = new System.Drawing.Point(334, 175);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(188, 20);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // openFileDialog1
             // 
@@ -106,6 +107,7 @@
             this.Konacna.TabIndex = 5;
             this.Konacna.Text = "Konacna";
             this.Konacna.UseVisualStyleBackColor = true;
+            this.Konacna.CheckedChanged += new System.EventHandler(this.Konacna_CheckedChanged);
             // 
             // label2
             // 
