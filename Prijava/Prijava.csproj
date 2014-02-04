@@ -84,7 +84,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PPPPD\PPPPD.csproj">
+    <ProjectReference Include="PPPPD\PPPPD.csproj">
       <Project>{72DB451E-1B3F-4EE6-9684-2E4D7BF48CFF}</Project>
       <Name>PPPPD</Name>
     </ProjectReference>
