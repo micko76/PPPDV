@@ -1,14 +1,15 @@
-﻿using System;
+﻿using FileHelpers;
+using PPPPD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 using System.Xml.Serialization;
-using FileHelpers;
 
 
 namespace Prijava
@@ -43,11 +44,406 @@ namespace Prijava
         {
 
         }
+        static public List<PodaciOPrihodimaTip> Citac(Popuna[] info, List<PodaciOPrihodimaTip> spisak)
+        {
+
+            FileHelperEngine motorce = new FileHelperEngine(typeof(Popuna));
+            try
+            {
+                info = motorce.ReadFile(putanja) as Popuna[];
+
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            LinkedList<Popuna> infolista = new LinkedList<Popuna>();
+            foreach (Popuna pop in info)
+            {
+                infolista.AddLast(pop);
+            }
+            LinkedListNode<Popuna> tour = infolista.First;
+
+            //int i = 0;
+            //try
+            //{
+            while (tour != null)
+            {
+                PodaciOPrihodimaTip sp = new PodaciOPrihodimaTip();
+                MultifunkcionalnoPolje pom = new MultifunkcionalnoPolje();
+                MultifunkcionalnoPolje pom1 = new MultifunkcionalnoPolje();
+                MultifunkcionalnoPolje pom2 = new MultifunkcionalnoPolje();
+                MultifunkcionalnoPolje pom3 = new MultifunkcionalnoPolje();
+                MultifunkcionalnoPolje pom4 = new MultifunkcionalnoPolje();
+                MultifunkcionalnoPolje pom5 = new MultifunkcionalnoPolje();
+                LinkedListNode<Popuna> tour1 = tour.Next;
+                List<MultifunkcionalnoPolje> pomocni = new List<MultifunkcionalnoPolje>();
+                switch (tour.Value.SVP)
+                {
+
+                    case 101101000:
+                        {
+
+                            if (tour1 != null && tour.Value.IdentifikatorPrimaoca == tour1.Value.IdentifikatorPrimaoca)
+                            {
+                                sp.RedniBroj = tour.Value.RedniBroj;
+                                sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                sp.Ime = tour.Value.Ime.Trim();
+                                sp.Prezime = tour.Value.Prezime.Trim();
+                                sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                sp.SVP = tour.Value.SVP;
+                                sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                sp.MesecniFondSatiSpecified = true;
+                                sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                sp.BrojEfektivnihSatiSpecified = true;
+                                sp.Bruto = tour.Value.Bruto;
+                                sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                sp.Porez = tour.Value.Porez;
+                                sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                sp.PIO = tour.Value.PIO;
+                                sp.ZDR = tour.Value.ZDR;
+                                sp.NEZ = tour.Value.NEZ;
+                                sp.PIOBen = tour.Value.PIOBen;
+                                pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                                pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                                pomocni.Add(pom);
+                                pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                                pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                                pomocni.Add(pom1);
+                                pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                                pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                                pomocni.Add(pom2);
+                                pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                                pom5.Vrednost = "1";
+                                pomocni.Add(pom5);
+                                //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                                //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                                //pomocni.Add(pom3);
+                                pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                                pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                                pomocni.Add(pom4);
+                                sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                                sp.DeklarisaniMFPSpecified = true;
+                                spisak.Add(sp);
+                                tour = tour1;
+
+                            }
+                            else
+                            {
+                                sp.RedniBroj = tour.Value.RedniBroj;
+                                sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                sp.Ime = tour.Value.Ime.Trim();
+                                sp.Prezime = tour.Value.Prezime.Trim();
+                                sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                sp.SVP = tour.Value.SVP;
+                                sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                sp.MesecniFondSatiSpecified = true;
+                                sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                sp.BrojEfektivnihSatiSpecified = true;
+                                sp.Bruto = tour.Value.Bruto;
+                                sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                sp.Porez = tour.Value.Porez;
+                                sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                sp.PIO = tour.Value.PIO;
+                                sp.ZDR = tour.Value.ZDR;
+                                sp.NEZ = tour.Value.NEZ;
+                                sp.PIOBen = tour.Value.PIOBen;
+                                pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                                pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                                pomocni.Add(pom);
+                                pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                                pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                                pomocni.Add(pom1);
+                                pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                                pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                                pomocni.Add(pom2);
+                                //pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                                //pom5.Vrednost = "1";
+                                //pomocni.Add(pom5);
+                                //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                                //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                                //pomocni.Add(pom3);
+                                pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                                pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                                pomocni.Add(pom4);
+                                sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                                sp.DeklarisaniMFPSpecified = true;
+                                spisak.Add(sp);
+                                tour = tour.Next;
+                            }
+
+                        }
+
+                        #region MyRegion
+
+
+                        /* else
+                             {
+                                 if (tour.Value.IdentifikatorPrimaoca == tour.Next.Value.IdentifikatorPrimaoca)
+                                 {
+                                     sp.RedniBroj = tour.Value.RedniBroj;
+                                     sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                     sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                     sp.Ime = tour.Value.Ime.Trim();
+                                     sp.Prezime = tour.Value.Prezime.Trim();
+                                     sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                     sp.SVP = tour.Value.SVP;
+                                     sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                     sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                     sp.MesecniFondSatiSpecified = true;
+                                     sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                     sp.BrojEfektivnihSatiSpecified = true;
+                                     sp.Bruto = tour.Value.Bruto;
+                                     sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                     sp.Porez = tour.Value.Porez;
+                                     sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                     sp.PIO = tour.Value.PIO;
+                                     sp.ZDR = tour.Value.ZDR;
+                                     sp.NEZ = tour.Value.NEZ;
+                                     sp.PIOBen = tour.Value.PIOBen;
+                                     pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                                     pom.Vrednost = "1";
+                                     sp.DeklarisaniMFP.MFP.Add(pom);
+                                     sp.DeklarisaniMFPSpecified = true;
+                                     spisak.Add(sp);
+                                     tour = tour.Next;
+                                 }
+                                 else 
+                                 {
+                                     sp.RedniBroj = tour.Value.RedniBroj;
+                                     sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                                     sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                                     sp.Ime = tour.Value.Ime.Trim();
+                                     sp.Prezime = tour.Value.Prezime.Trim();
+                                     sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                                     sp.SVP = tour.Value.SVP;
+                                     sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                                     sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                                     sp.MesecniFondSatiSpecified = true;
+                                     sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                                     sp.BrojEfektivnihSatiSpecified = true;
+                                     sp.Bruto = tour.Value.Bruto;
+                                     sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                                     sp.Porez = tour.Value.Porez;
+                                     sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                                     sp.PIO = tour.Value.PIO;
+                                     sp.ZDR = tour.Value.ZDR;
+                                     sp.NEZ = tour.Value.NEZ;
+                                     sp.PIOBen = tour.Value.PIOBen;
+                                     spisak.Add(sp);
+                                     tour = tour.Next;
+                                 }
+                                
+                            }*/
+                        #endregion
+                        break;
+                    case 101201000:
+                        sp.RedniBroj = tour.Value.RedniBroj;
+                        sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                        sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                        sp.Ime = tour.Value.Ime.Trim();
+                        sp.Prezime = tour.Value.Prezime.Trim();
+                        sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                        sp.SVP = tour.Value.SVP;
+                        sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                        sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                        sp.MesecniFondSatiSpecified = true;
+                        sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                        sp.BrojEfektivnihSatiSpecified = true;
+                        sp.Bruto = tour.Value.Bruto;
+                        sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                        sp.Porez = tour.Value.Porez;
+                        sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                        sp.PIO = tour.Value.PIO;
+                        sp.ZDR = tour.Value.ZDR;
+                        sp.NEZ = tour.Value.NEZ;
+                        sp.PIOBen = tour.Value.PIOBen;
+                        pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                        pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                        pomocni.Add(pom);
+                        pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                        pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                        pomocni.Add(pom1);
+                        pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                        pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                        pomocni.Add(pom2);
+                        pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                        pom5.Vrednost = "1";
+                        pomocni.Add(pom5);
+                        //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                        //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                        //pomocni.Add(pom3);
+                        pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                        pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                        pomocni.Add(pom4);
+                        sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                        sp.DeklarisaniMFPSpecified = true;
+                        spisak.Add(sp);
+                        tour = tour.Next;
+                        break;
+                    case 101204000:
+                        sp.RedniBroj = tour.Value.RedniBroj;
+                        sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                        sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                        sp.Ime = tour.Value.Ime.Trim();
+                        sp.Prezime = tour.Value.Prezime.Trim();
+                        sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                        sp.SVP = tour.Value.SVP;
+                        sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                        sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                        sp.MesecniFondSatiSpecified = true;
+                        sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                        sp.BrojEfektivnihSatiSpecified = true;
+                        sp.Bruto = tour.Value.Bruto;
+                        sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                        sp.Porez = tour.Value.Porez;
+                        sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                        sp.PIO = tour.Value.PIO;
+                        sp.ZDR = tour.Value.ZDR;
+                        sp.NEZ = tour.Value.NEZ;
+                        sp.PIOBen = tour.Value.PIOBen;
+                        pom.Oznaka = MultifunkcionalnoPoljeOznaka.MFP1;
+                        pom.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF1));
+                        pomocni.Add(pom);
+                        pom1.Oznaka = MultifunkcionalnoPoljeOznaka.MFP2;
+                        pom1.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF2));
+                        pomocni.Add(pom1);
+                        pom2.Oznaka = MultifunkcionalnoPoljeOznaka.MFP4;
+                        pom2.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF4));
+                        pomocni.Add(pom2);
+                        pom5.Oznaka = MultifunkcionalnoPoljeOznaka.MFP10;
+                        pom5.Vrednost = "1";
+                        pomocni.Add(pom5);
+                        //pom3.Oznaka = MultifunkcionalnoPoljeOznaka.MFP11;
+                        //pom3.Vrednost = Convert.ToString(tour.Value.MF11);
+                        //pomocni.Add(pom3);
+                        pom4.Oznaka = MultifunkcionalnoPoljeOznaka.MFP12;
+                        pom4.Vrednost = Convert.ToString(Convert.ToInt32(tour.Value.MF12));
+                        pomocni.Add(pom4);
+                        sp.DeklarisaniMFP.MFP.AddRange(pomocni);
+                        sp.DeklarisaniMFPSpecified = true;
+                        spisak.Add(sp);
+                        tour = tour.Next;
+                        break;
+                    default:
+                        sp.RedniBroj = tour.Value.RedniBroj;
+                        sp.VrstaIdentifikatoraPrimaoca = tour.Value.VrstaIdentifikatoraPrimaoca;
+                        sp.IdentifikatorPrimaoca = tour.Value.IdentifikatorPrimaoca;
+                        sp.Ime = tour.Value.Ime.Trim();
+                        sp.Prezime = tour.Value.Prezime.Trim();
+                        sp.OznakaPrebivalista = tour.Value.OznakaPrebivalista;
+                        sp.SVP = tour.Value.SVP;
+                        sp.BrojKalendarskihDana = tour.Value.BrojKalendarskihDana;
+                        sp.MesecniFondSati = tour.Value.MesecniFondSati;
+                        sp.MesecniFondSatiSpecified = true;
+                        sp.BrojEfektivnihSati = tour.Value.BrojEfektivnihSati;
+                        sp.BrojEfektivnihSatiSpecified = true;
+                        sp.Bruto = tour.Value.Bruto;
+                        sp.OsnovicaPorez = tour.Value.OsnovicaPorez;
+                        sp.Porez = tour.Value.Porez;
+                        sp.OsnovicaDoprinosi = tour.Value.OsnovicaDoprinosi;
+                        sp.PIO = tour.Value.PIO;
+                        sp.ZDR = tour.Value.ZDR;
+                        sp.NEZ = tour.Value.NEZ;
+                        sp.PIOBen = tour.Value.PIOBen;
+                        spisak.Add(sp);
+                        tour = tour.Next;
+                        break;
+                }
+
+            }
+            //}/
+            //catch (NullReferenceException e)
+            //{
+            //   // Console.WriteLine(e.Message);
+
+            //}
+            return spisak;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var tekst = "Fajl: " + putanja + "\n" + "Period: " + textBox3.Text;
-            textBox2.Text = tekst;
+            //var tekst = "Fajl: " + putanja + "\n" + "Period: " + textBox3.Text;
+            //textBox2.Text = tekst;
+            PodaciPoreskeDeklaracijeTip prijava = new PodaciPoreskeDeklaracijeTip();
+            int br = Brojac();
+            int br1 = BrojacRadnika();
+            prijava.PodaciOPrijavi.ObracunskiPeriod = textBox3.Text;
+            if (Konacna.Checked)
+            {
+                prijava.PodaciOPrijavi.OznakaZaKonacnu = new PodaciOPrijaviTipOznakaZaKonacnu();
+                prijava.PodaciOPrijavi.OznakaZaKonacnuSpecified = true;
+            }
+            prijava.PodaciOPrijavi.DatumPlacanja = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            prijava.PodaciOPrijavi.DatumPlacanjaSpecified = true;
+            //fali nesto redova.....
+
+            Popuna[] pomocni = new Popuna[br + 1];
+            var spisak = new List<PodaciOPrihodimaTip>(br + 1);
+            Citac(pomocni, spisak);
+            prijava.DeklarisaniPrihodi.PodaciOPrihodima = spisak;
+            Serialize(prijava);
+
+
+
+
+
+        }
+        static public void Serialize(PodaciPoreskeDeklaracijeTip prijava)
+        {
+            XmlSerializer swosh = new XmlSerializer(typeof(PodaciPoreskeDeklaracijeTip));
+            TextWriter pisac = new StreamWriter(@"D:\Simpen\konacna.xml");
+            swosh.Serialize(pisac, prijava);
+            pisac.Close();
+        }
+        static public int Brojac()
+        {
+            FileHelperEngine motorce = new FileHelperEngine(typeof(Popuna));
+            try
+            {
+                Popuna[] sp = motorce.ReadFile(putanja) as Popuna[];
+                return sp.Length;
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show(e.ToString());
+                return 0;
+            }
+
+        }
+        static public int BrojacRadnika()
+        {
+            FileHelperEngine motorce = new FileHelperEngine(typeof(Popuna));
+
+            try
+            {
+                Popuna[] sp = motorce.ReadFile(putanja) as Popuna[];
+                int broj = 1;
+                int i = 0;
+                int j = 1;
+                string sp1, sp2;
+                while (i < sp.Length)
+                {
+                    sp1 = sp[i].IdentifikatorPrimaoca;
+                    sp2 = sp[j].IdentifikatorPrimaoca;
+                    if (sp1 != sp2)
+                        broj++;
+                    i++;
+                    if (j < sp.Length - 1)
+                        j++;
+                }
+                return broj;
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show(e.ToString());
+                return 0;
+            }
+           
         }
         private void UpdateUserInterface()
         {
@@ -118,8 +514,18 @@ namespace Prijava
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            var tekst = "Fajl: " + putanja + "\n" + "Period: " + textBox3.Text;
-            textBox2.Text = tekst;
+            //var tekst = "Fajl: " + putanja + "\n" + "Period: " + textBox3.Text;
+            //textBox2.Text = tekst;
+        }
+
+        private void Konacna_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
         
     }
