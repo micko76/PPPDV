@@ -1,0 +1,215 @@
+<OPSTINE >
+	<OPSTINA id="1" naziv="ALEKSANDROVAC"/>
+	<OPSTINA id="2" naziv="ALEKSINAC             "/>
+	<OPSTINA id="3" naziv="ARANDJELOVAC          "/>
+	<OPSTINA id="4" naziv="ARILJE                "/>
+	<OPSTINA id="6" naziv="BABUSNICA"/>
+	<OPSTINA id="7" naziv="BAJINA BASTA          "/>
+	<OPSTINA id="8" naziv="BATOCINA"/>
+	<OPSTINA id="9" naziv="BELA PALANKA          "/>
+	<OPSTINA id="10" naziv="BEOGRAD-BARAJEVO"/>
+	<OPSTINA id="11" naziv="BEOGRAD-CUKARICA"/>
+	<OPSTINA id="12" naziv="BEOGRAD-GROCKA"/>
+	<OPSTINA id="13" naziv="BEOGRAD-NOVI BEOGRAD"/>
+	<OPSTINA id="14" naziv="BEOGRAD-OBRENOVAC"/>
+	<OPSTINA id="15" naziv="BEOGRAD-PALILULA"/>
+	<OPSTINA id="16" naziv="BEOGRAD-SAVSKI VENAC"/>
+	<OPSTINA id="17" naziv="BEOGRAD-SOPOT"/>
+	<OPSTINA id="18" naziv="BEOGRAD-STARI GRAD"/>
+	<OPSTINA id="19" naziv="BEOGRAD-VOZDOVAC"/>
+	<OPSTINA id="20" naziv="BEOGRAD-VRACAR"/>
+	<OPSTINA id="21" naziv="BEOGRAD-ZEMUN"/>
+	<OPSTINA id="22" naziv="BEOGRAD-ZVEZDARA"/>
+	<OPSTINA id="23" naziv="BLACE                 "/>
+	<OPSTINA id="24" naziv="BOGATIC"/>
+	<OPSTINA id="25" naziv="BOJNIK"/>
+	<OPSTINA id="26" naziv="BOLJEVAC"/>
+	<OPSTINA id="27" naziv="BOR                   "/>
+	<OPSTINA id="28" naziv="BOSILEGRAD"/>
+	<OPSTINA id="29" naziv="BRUS                  "/>
+	<OPSTINA id="30" naziv="BUJANOVAC"/>
+	<OPSTINA id="31" naziv="CRNA TRAVA            "/>
+	<OPSTINA id="32" naziv="CICEVAC"/>
+	<OPSTINA id="33" naziv="CUPRIJA"/>
+	<OPSTINA id="34" naziv="CACAK-GRAD"/>
+	<OPSTINA id="35" naziv="CAJETINA"/>
+	<OPSTINA id="36" naziv="DESPOTOVAC            "/>
+	<OPSTINA id="37" naziv="DIMITROVGRAD          "/>
+	<OPSTINA id="38" naziv="DOLJEVAC              "/>
+	<OPSTINA id="39" naziv="GADZIN HAN"/>
+	<OPSTINA id="40" naziv="GOLUBAC               "/>
+	<OPSTINA id="41" naziv="GORNJI MILANOVAC      "/>
+	<OPSTINA id="42" naziv="IVANJICA"/>
+	<OPSTINA id="43" naziv="KLADOVO               "/>
+	<OPSTINA id="44" naziv="KNIC"/>
+	<OPSTINA id="45" naziv="KNJAZEVAC"/>
+	<OPSTINA id="46" naziv="KOCELJEVA             "/>
+	<OPSTINA id="48" naziv="KOSJERIC"/>
+	<OPSTINA id="49" naziv="KRAGUJEVAC - GRAD"/>
+	<OPSTINA id="50" naziv="KRALJEVO-GRAD"/>
+	<OPSTINA id="51" naziv="KRUPANJ               "/>
+	<OPSTINA id="52" naziv="KRUSEVAC-GRAD"/>
+	<OPSTINA id="53" naziv="KUCEVO"/>
+	<OPSTINA id="54" naziv="KURSUMLIJA"/>
+	<OPSTINA id="55" naziv="LAJKOVAC              "/>
+	<OPSTINA id="56" naziv="BEOGRAD-LAZAREVAC"/>
+	<OPSTINA id="57" naziv="LEBANE                "/>
+	<OPSTINA id="58" naziv="LESKOVAC-GRAD"/>
+	<OPSTINA id="59" naziv="LOZNICA-GRAD"/>
+	<OPSTINA id="60" naziv="LUCANI                "/>
+	<OPSTINA id="61" naziv="LJIG                  "/>
+	<OPSTINA id="62" naziv="LJUBOVIJA             "/>
+	<OPSTINA id="63" naziv="MAJDANPEK             "/>
+	<OPSTINA id="65" naziv="MALI ZVORNIK          "/>
+	<OPSTINA id="66" naziv="MALO CRNICE"/>
+	<OPSTINA id="67" naziv="MEDVEDJA              "/>
+	<OPSTINA id="68" naziv="MEROSINA"/>
+	<OPSTINA id="69" naziv="MIONICA               "/>
+	<OPSTINA id="70" naziv="BEOGRAD-MLADENOVAC"/>
+	<OPSTINA id="72" naziv="NEGOTIN               "/>
+	<OPSTINA id="73" naziv="NIS -GRAD             "/>
+	<OPSTINA id="74" naziv="NOVA VAROS"/>
+	<OPSTINA id="75" naziv="NOVI PAZAR-GRAD"/>
+	<OPSTINA id="76" naziv="OSECINA"/>
+	<OPSTINA id="77" naziv="PARACIN"/>
+	<OPSTINA id="78" naziv="PETROVAC NA MLAVI     "/>
+	<OPSTINA id="79" naziv="PIROT                 "/>
+	<OPSTINA id="80" naziv="GRAD-POZAREVAC"/>
+	<OPSTINA id="81" naziv="POZEGA"/>
+	<OPSTINA id="82" naziv="PRESEVO"/>
+	<OPSTINA id="83" naziv="PRIBOJ NA LIMU        "/>
+	<OPSTINA id="84" naziv="PRIJEPOLJE            "/>
+	<OPSTINA id="85" naziv="PROKUPLJE             "/>
+	<OPSTINA id="86" naziv="RACA "/>
+	<OPSTINA id="87" naziv="RASKA"/>
+	<OPSTINA id="88" naziv="RAZANJ"/>
+	<OPSTINA id="89" naziv="REKOVAC               "/>
+	<OPSTINA id="91" naziv="SJENICA               "/>
+	<OPSTINA id="92" naziv="SMEDEREVO-GRAD"/>
+	<OPSTINA id="93" naziv="SMEDEREVSKA PALANKA   "/>
+	<OPSTINA id="94" naziv="SOKOBANJA             "/>
+	<OPSTINA id="95" naziv="SURDULICA             "/>
+	<OPSTINA id="96" naziv="JAGODINA-GRAD"/>
+	<OPSTINA id="97" naziv="SVILAJNAC             "/>
+	<OPSTINA id="98" naziv="SVRLJIG               "/>
+	<OPSTINA id="99" naziv="SABAC-GRAD"/>
+	<OPSTINA id="100" naziv="UZICE-GRAD"/>
+	<OPSTINA id="101" naziv="TOPOLA                "/>
+	<OPSTINA id="102" naziv="TRGOVISTE             "/>
+	<OPSTINA id="103" naziv="TRSTENIK              "/>
+	<OPSTINA id="104" naziv="TUTIN                 "/>
+	<OPSTINA id="105" naziv="UB                    "/>
+	<OPSTINA id="107" naziv="VALJEVO-GRAD"/>
+	<OPSTINA id="108" naziv="VARVARIN              "/>
+	<OPSTINA id="109" naziv="VELIKA PLANA          "/>
+	<OPSTINA id="110" naziv="VELIKO GRADISTE"/>
+	<OPSTINA id="111" naziv="VLADICIN HAN"/>
+	<OPSTINA id="112" naziv="VLADIMIRCI            "/>
+	<OPSTINA id="113" naziv="VLASOTINCE            "/>
+	<OPSTINA id="114" naziv="VRANJE-GRAD"/>
+	<OPSTINA id="115" naziv="VRNJACKA BANJA"/>
+	<OPSTINA id="116" naziv="ZAJECAR-GRAD"/>
+	<OPSTINA id="117" naziv="ZABARI"/>
+	<OPSTINA id="118" naziv="ZAGUBICA"/>
+	<OPSTINA id="119" naziv="ZITORADJA"/>
+	<OPSTINA id="120" naziv="BEOGRAD-RAKOVICA"/>
+	<OPSTINA id="121" naziv="LAPOVO                "/>
+	<OPSTINA id="122" naziv="NIS-NISKA BANJA"/>
+	<OPSTINA id="123" naziv="KRAGUJEVAC-STRAGARI"/>
+	<OPSTINA id="124" naziv="BEOGRAD-SURCIN"/>
+	<OPSTINA id="125" naziv="NIS-PANTELEJ"/>
+	<OPSTINA id="126" naziv="NIS-CRVENI KRST"/>
+	<OPSTINA id="127" naziv="NIS-PALILULA"/>
+	<OPSTINA id="128" naziv="NIS-MEDIANA"/>
+	<OPSTINA id="129" naziv="POZAREVAC - KOSTOLAC"/>
+	<OPSTINA id="130" naziv="VRANJE-VRANJSKA BANJA"/>
+	<OPSTINA id="908" naziv="NBS                   "/>
+	<OPSTINA id="910" naziv="NBS                   "/>
+	<OPSTINA id="301" naziv="DECANI"/>
+	<OPSTINA id="303" naziv="DJAKOVICA             "/>
+	<OPSTINA id="304" naziv="GLOGOVAC              "/>
+	<OPSTINA id="305" naziv="GNJILANE              "/>
+	<OPSTINA id="306" naziv="ISTOK                 "/>
+	<OPSTINA id="307" naziv="KACANIK"/>
+	<OPSTINA id="308" naziv="KLINA                 "/>
+	<OPSTINA id="309" naziv="KOSOVSKA KAMENICA     "/>
+	<OPSTINA id="310" naziv="KOSOVSKA MITROVICA    "/>
+	<OPSTINA id="311" naziv="LEPOSAVIC"/>
+	<OPSTINA id="312" naziv="LIPLJAN               "/>
+	<OPSTINA id="313" naziv="ORAHOVAC              "/>
+	<OPSTINA id="314" naziv="PEC"/>
+	<OPSTINA id="315" naziv="PODUJEVO              "/>
+	<OPSTINA id="316" naziv="PRISTINA - GRAD"/>
+	<OPSTINA id="317" naziv="PRIZREN               "/>
+	<OPSTINA id="318" naziv="SRBICA                "/>
+	<OPSTINA id="319" naziv="SUVA REKA             "/>
+	<OPSTINA id="320" naziv="UROSEVAC"/>
+	<OPSTINA id="321" naziv="VITINA                "/>
+	<OPSTINA id="322" naziv="VUCITRN"/>
+	<OPSTINA id="324" naziv="ZUBIN POTOK           "/>
+	<OPSTINA id="325" naziv="STIMLJE"/>
+	<OPSTINA id="326" naziv="STRPCE"/>
+	<OPSTINA id="327" naziv="OBILIC"/>
+	<OPSTINA id="328" naziv="KOSOVO POLJE          "/>
+	<OPSTINA id="329" naziv="NOVO BRDO             "/>
+	<OPSTINA id="330" naziv="ZVECAN"/>
+	<OPSTINA id="331" naziv="GORA                  "/>
+	<OPSTINA id="201" naziv="ADA                   "/>
+	<OPSTINA id="202" naziv="ALIBUNAR              "/>
+	<OPSTINA id="203" naziv="APATIN                "/>
+	<OPSTINA id="204" naziv="BAC"/>
+	<OPSTINA id="205" naziv="BACKA PALANKA"/>
+	<OPSTINA id="206" naziv="BACKA TOPOLA"/>
+	<OPSTINA id="207" naziv="BACKI PETROVAC"/>
+	<OPSTINA id="208" naziv="BECEJ"/>
+	<OPSTINA id="209" naziv="BELA CRKVA            "/>
+	<OPSTINA id="210" naziv="BEOCIN"/>
+	<OPSTINA id="211" naziv="COKA"/>
+	<OPSTINA id="212" naziv="INDJIJA               "/>
+	<OPSTINA id="213" naziv="IRIG                  "/>
+	<OPSTINA id="214" naziv="KANJIZA"/>
+	<OPSTINA id="215" naziv="KIKINDA               "/>
+	<OPSTINA id="216" naziv="KOVACICA"/>
+	<OPSTINA id="217" naziv="KOVIN                 "/>
+	<OPSTINA id="218" naziv="KULA                  "/>
+	<OPSTINA id="219" naziv="MALI IDJOS"/>
+	<OPSTINA id="220" naziv="NOVA CRNJA"/>
+	<OPSTINA id="221" naziv="NOVI BECEJ"/>
+	<OPSTINA id="222" naziv="NOVI KNEZEVAC"/>
+	<OPSTINA id="223" naziv="NOVI SAD - GRAD"/>
+	<OPSTINA id="224" naziv="ODZACI"/>
+	<OPSTINA id="225" naziv="OPOVO                 "/>
+	<OPSTINA id="226" naziv="PANCEVO-GRAD"/>
+	<OPSTINA id="227" naziv="PECINCI"/>
+	<OPSTINA id="228" naziv="PLANDISTE"/>
+	<OPSTINA id="229" naziv="RUMA                  "/>
+	<OPSTINA id="230" naziv="SECANJ"/>
+	<OPSTINA id="231" naziv="SENTA                 "/>
+	<OPSTINA id="232" naziv="SOMBOR-GRAD"/>
+	<OPSTINA id="233" naziv="SRBOBRAN              "/>
+	<OPSTINA id="234" naziv="SREMSKA MITROVICA-GRAD"/>
+	<OPSTINA id="235" naziv="STARA PAZOVA          "/>
+	<OPSTINA id="236" naziv="SUBOTICA-GRAD"/>
+	<OPSTINA id="237" naziv="SID"/>
+	<OPSTINA id="238" naziv="TEMERIN               "/>
+	<OPSTINA id="239" naziv="TITEL                 "/>
+	<OPSTINA id="240" naziv="VRBAS                 "/>
+	<OPSTINA id="241" naziv="VRSAC"/>
+	<OPSTINA id="242" naziv="ZRENJANIN-GRAD"/>
+	<OPSTINA id="243" naziv="ZABALJ"/>
+	<OPSTINA id="244" naziv="ZITISTE"/>
+	<OPSTINA id="247" naziv="NOVI SAD-PETROVADIN"/>
+	<OPSTINA id="250" naziv="SREMSKI KARLOVCI      "/>
+	<OPSTINA id="888" naziv="IZVAN REPUBLIKE SRBIJE"/>
+	<OPSTINA id="501" naziv="TREZOR GRADA BEOGRADA"/>
+	<OPSTINA id="511" naziv="TREZOR GRADA,NOVI SAD"/>
+	<OPSTINA id="521" naziv="TREZOR GRADA NISA"/>
+	<OPSTINA id="531" naziv="TREZOR GRAD.KRAGUJEVCA"/>
+	<OPSTINA id="541" naziv="TREZOR GRADA PRISTINE"/>
+	<OPSTINA id="581" naziv="TREZOR AP VOJVODINE   "/>
+	<OPSTINA id="591" naziv="TREZOR AP KOSOVO I MET"/>
+	<OPSTINA id="601" naziv="TREZOR REP. SRBIJE    "/>
+	<OPSTINA id="701" naziv="TREZOR REP. CRNE GORE"/>
+	<OPSTINA id="840" naziv="TREZOR - OPSTINA"/>
+	<OPSTINA id="901" naziv="SAVEZNI TREZOR"/>
+</OPSTINE>
