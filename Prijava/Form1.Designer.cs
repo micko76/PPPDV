@@ -56,6 +56,7 @@
             this.Generisi = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // putanjaBox
@@ -376,6 +377,7 @@
         private System.Windows.Forms.Button Generisi;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

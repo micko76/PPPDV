@@ -21,6 +21,7 @@ namespace Prijava
         {
             InitializeComponent();
             button2.Enabled = false;
+            textBox4.Text = Properties.Settings.Default.PIB;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,8 +47,8 @@ namespace Prijava
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var tekst = "Fajl: " + putanja + "\n" + "Period: " + textBox3.Text;
-            textBox2.Text = tekst;
+            Properties.Settings.Default.PIB = textBox4.Text;
+            Properties.Settings.Default.Save();
         }
         private void UpdateUserInterface()
         {

@@ -25,3 +25,9 @@ C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\GenerateResource.w
 C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.exe
 C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.pdb
 C:\Documents and Settings\Micko\PPPDV\Prijava\bin\Release\opstine.xml
+C:\Documents and Settings\Micko\PPPDV\Prijava\bin\Release\Prijava.exe.manifest
+C:\Documents and Settings\Micko\PPPDV\Prijava\bin\Release\Prijava.application
+C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.TrustInfo.xml
+C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.exe.manifest
+C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.application
+C:\Documents and Settings\Micko\PPPDV\Prijava\obj\x86\Release\Prijava.Resource1.resources
